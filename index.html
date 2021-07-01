@@ -1,12 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>19 paskaita</title>
 </head>
+
 <body>
-    
+    <script>
+        "use strict";
+
+        //switch sakinys
+
+        var siosDienosData = new Date();
+        var diena = siosDienosData.getDay(); //0-6
+
+        // var diena = "Sunday";
+
+        //0 - sekmadienis
+        //1 - pirmadienis
+        //2 - antradienis
+        //...
+
+        //Pagal gautus kintamojo diena skaicius, isvesti savaites diena zodziais
+
+        // if (diena == 0) {
+        //     console.log("Sekmadienis");
+        // } else if (diena == 1) {
+        //     console.log("Pirmadienis");
+        // } else if (diena == 2) {
+        //     console.log("Antradienis");
+        // } else if (diena == 3) {
+        //     console.log("Trečiadienis");
+        // } else if (diena == 4) {
+        //     console.log("Ketvirtadienis");
+        // } else if (diena == 5) {
+        //     console.log("Penktadienis");
+        // } else if (diena == 6) {
+        //     console.log("Šeštadienis");
+        // } else {
+        //     console.log("Tokios dienos nera");
+        // }
+
+        //if galima < > salygas tikrinti
+        //switch konkretus skaicius
+
+        switch (diena) {
+            // case "Sunday":
+            // case a:
+            case 0:
+                console.log("Sekmadienis");
+                break;
+            case 1:
+                console.log("Pirmadienis");
+                break;
+            case 2:
+                console.log("Antradienis");
+                break;
+            case 3:
+                console.log("Trečiadienis");
+                break;
+            case 4:
+                console.log("Ketvirtadienis");
+                break;
+            case 5:
+                console.log("Penktadienis");
+                break;
+            case 6:
+                console.log("Šeštadienis");
+                break;
+            default:
+                console.log("Tokios dienos nera");
+        }
+
+        console.log(diena);
+
+        //Masyvas
+
+        //101 sandeliukas kuris savyje turi savo numeri
+
+        var sandelis1 = 1;
+        var sandelis2 = 2;
+
+        var sandelioMasyvas;
+
+        //numeravimas prasideda nuo nulio
+        sandelioMasyvas = ["Pirmas", "Antras", "Trecias", "Ketvirtas", "Penktas", "Sestas", "Septintas"];
+
+        //nebereikia
+        console.log(sandelioMasyvas);
+
+        //atvaizduoti tiktai sandeliuka nr4
+
+        console.log(sandelioMasyvas[0]);
+        console.log(sandelioMasyvas[1]);
+        console.log(sandelioMasyvas[2]);
+        console.log(sandelioMasyvas[3]);
+        console.log(sandelioMasyvas[4]);
+        console.log(sandelioMasyvas[5]);
+        console.log(sandelioMasyvas[6]);
+
+        var ketvirtas = sandelioMasyvas[3];
+        console.log(ketvirtas);
+
+        sandelioMasyvas[7] = "Astuntas";
+        //praleidziam 9 bet taip daryti nereiketu
+        sandelioMasyvas[9] = "Desimtas";
+
+        sandelioMasyvas[0] = "Pirmas atnaujintas";
+
+
+        console.log(sandelioMasyvas);
+
+        //Tuscias masyvas
+
+        var tusciasMasyvas = [];
+        // tusciasMasyvas[0] = "Nulis";
+        // tusciasMasyvas[1] = "Vienas";
+
+
+        // 101 karta - masyvas 101 elementu
+        // tusciasMasyvas.push("Vienas"); //1
+        // tusciasMasyvas.push("Antras"); //2
+
+
+        //ciklai - for
+
+        for (var i = 0; i < 204; i++) { //apsibreziam ciklo kintamaji, kol i<15; i kintamojo +1
+            tusciasMasyvas.push("Vienas" + i); //1
+            // console.log(tusciasMasyvas[i]);
+        }
+
+        // console.log(tusciasMasyvas);
+
+        // Atvaizduoti visus sandeliukus atskirai tusciasMasyvas - 101
+
+        var masyvoIlgis = tusciasMasyvas.length;
+
+        console.log(masyvoIlgis);
+
+        // //Isvesti kiekviena masyve esancio elemento reiksme
+        // for (var i = 0; i < masyvoIlgis; i++) {
+        //     console.log(tusciasMasyvas[i]);
+        // }
+
+        // 1. Susumuoti visus skaicius, esancius 9 elementu masyve
+
+        var skaiciuMasyvas = [10, 15, 12, 3, 4, 9, 80, 30, 90];
+        var suma = 0;
+
+        for (var i = 0; i < skaiciuMasyvas.length; i++) {
+            suma = suma + skaiciuMasyvas[i];
+        }
+        console.log("masyvo elementu suma " + suma);
+
+        // 2. Turime masyva, kuriame kiekvienas elementas yra penkiazenklio skaiciaus skaitmuo. Pvz 12345, jo masyvas
+        // [1,2,3,4,5]. Sudauginti visus masyve esancius skaicius.
+
+        var skaitmenys = [5, 4, 3, 2, 1];
+        var sandauga = 1;
+
+        for (var i = 0; i < skaitmenys.length; i++) {
+            // sandauga = sandauga * skaitmenys[i];
+            sandauga *= skaitmenys[i];
+        }
+        console.log("Penkiaženklio sandauga " + sandauga);
+
+        // 3. Sudauginkite du skaicius be daugybos operatoriaus/
+
+        var a = 2;
+        var b = 25;
+        var sandauga = 0;
+
+        for (var i = 0; i < b; i++) {
+            sandauga = sandauga + a;
+        }
+        console.log(sandauga);
+
+
+        var aa = 13;
+
+        while (aa > 10) {
+            console.log("labas");
+            aa--;
+        }
+
+        // 4. N-zenklio skaiciaus skaitmenis isvesti atskirai
+        // 12345 - 1 2 3 4 5
+        // 8421 - 8 4 2 1
+
+        var nsk = 120;
+
+        // 8421 % 10 = 1; 8421/10 = 842.xx ~ 842
+        // 842 % 10 = 2; 842/10 = 84.xx ~ 84
+        // 84 % 10 = 4; 84/10 = 8.xx ~ 8
+        // 8 % 10 = 8; 8/10 = 0.xx ~ 0
+
+        while (nsk != 0) {
+            console.log(nsk % 10);
+            nsk = parseInt(nsk / 10);
+        }
+
+        // kaip kiekviena skaitmeni idėti i masyva?
+    </script>
 </body>
+
 </html>
